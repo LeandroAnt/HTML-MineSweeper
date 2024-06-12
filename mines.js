@@ -15,10 +15,6 @@ function createButtons() {
     }
 }
 
-function minesLeft() {
-    const container = document.getElementById("mines");
-}
-
 function loadMines() {
     const mines = document.getElementsByClassName("mine");
     let counter = 0;
