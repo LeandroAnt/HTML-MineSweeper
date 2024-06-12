@@ -30,16 +30,30 @@ function loadMines() {
 }
 
 function mineTap() {
-    if (this.classList.contains("mineBomb")) {
-        alert("Game over!");
-        reloadPage();
+    if (document.getElementById("actionType").innerText === "Mines") {
+        if (this.classList.contains("mineBomb")) {
+            alert("Game over!");
+            reloadPage();
+        } else {
+            changeButtonToText(this, calculateMinesAround(this.id));
+            counter++;
+        }
+        if (counter === (rows * lines) - numberOfMines) {
+            setTimeout(() => {
+                alert("You won!");
+            }, 500)
+            setTimeout(() => {
+                reloadPage();
+            }, 600)
+        }
     } else {
-        changeButtonToText(this, calculateMinesAround(this.id));
-        counter++;
-    }
-    if (counter===(rows*lines)-numberOfMines){
-        setTimeout(() =>{ alert("You won!");},500)
-        setTimeout(() =>{ reloadPage();},600)
+        if (this.classList.contains("mineFlag")) {
+            this.classList.remove("mineFlag");
+        } else {
+            this.classList.add("mineFlag");
+        }
+        let numberOfMinesLeft = document.getElementById("numberOfMines")
+        numberOfMinesLeft.innerText=(`Total number of remaining mines:${numberOfMines - document.getElementsByClassName("mineFlag").length}`);
     }
 }
 
@@ -134,6 +148,15 @@ function changeButtonToText(buttonId, text) {
     const textNode = document.createTextNode(text);
     div.appendChild(textNode);
     buttonId.parentNode.replaceChild(div, buttonId);
+}
+
+function changeAction() {
+    let actionType = document.getElementById("actionType").innerText;
+    if (actionType === "Mines") {
+        document.getElementById("actionType").innerText = "Flags";
+    } else {
+        document.getElementById("actionType").innerText = "Mines";
+    }
 }
 
 function reloadPage() {
