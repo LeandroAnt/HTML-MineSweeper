@@ -6,32 +6,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <h1>MineSweeper</h1>
-        <div>
-            <button>Start Game</button>
-            <button>Restart Game</button>
+<div>
+    <h1 id="Title">Mine Sweeper</h1>
+    <div id>
+        <p id="numberOfMines">Total number of mines : 15</p>
+    </div>
+    <div id="gameBoard">
+        <div id="mines">
         </div>
-        <div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    </div>
+    <br>
+    <a href="minesweeper.html">
+        <button id="restartBtn">Restart Game</button>
+    </a>
+    <script src="mines.js"></script>
+</div>
 </body>
 </html>
