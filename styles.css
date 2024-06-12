@@ -1,3 +1,67 @@
-button{
-back
+#restartBtn{
+    background: #46464a;
+    color: white;
+}
+
+body{
+    text-align: center;
+    background: #c5b1b1;
+}
+
+#Title{
+    font-size: 5rem;
+    color: #000000;
+}
+
+#gameBoard{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background: #32465c;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mineButton{
+margin: 5px;
+height: 50px;
+width: 50px;
+background: hsl(236.3,26.4%,64.3%);
+    border-radius: 10px;
+}
+
+#mines{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+}
+
+.mineButton:hover{
+    background: hsl(236.3,26.4%,84.3%);
+}
+
+.mine.Button:active{
+    background: hsl(236.3,26.4%,34.3%);
+}
+
+#emptyMine{
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    align-content: center;
+    color: #c5b1b1;
+}
+
+#numberOfMines{
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.mineFlag{
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    background: hsl(0, 48%, 43%);
+    border-radius: 10px;
 }
